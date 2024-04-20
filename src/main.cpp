@@ -18,11 +18,12 @@ int main(int argc, char **argv)
         return 2;
     }
 
+    int ret_code = 0;
+
     const char **font_names_and_styles = (const char**)argv + 1;
     int count = argc - 1; 
     int found_index = -1;
-    const char *path = ff_find_first_font_path_vague(c, font_names_and_styles, count, &found_index);
-    int ret_code = 0;
+    const char *path = ff_find_first_font_path(c, font_names_and_styles, count, &found_index);
 
     if (path == nullptr)
     {
