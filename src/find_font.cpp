@@ -852,7 +852,9 @@ extern "C" const char *ff_find_first_font_path(ff_cache *cache, const char **fon
 
         if (ret != nullptr)
         {
-            *found_index = i;
+            if (found_index != nullptr)
+                *found_index = i;
+
             break;
         }
     }
